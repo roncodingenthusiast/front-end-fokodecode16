@@ -2,16 +2,16 @@ var app = angular.module('FokoDecode', ['ngRoute']);
 
 app.config(function($routeProvider, $locationProvider) {
     var resolveProjects = {
-        projects: function(Projects) {
-            return Projects.fetch();
-        }
+        projects: function() {
+            return 202;
+        }	
     };
 
     $routeProvider
         .when('/', {
             controller: 'mainController',
             templateUrl: 'templates/main.html',
-            resolve: 'mainResolve'
+            resolve: resolveProjects
         })
         .otherwise({
             redirectTo: '/'

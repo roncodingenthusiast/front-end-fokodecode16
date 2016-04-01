@@ -1,3 +1,4 @@
-app.controller('mainController', function() {
-    console.log(102);
+app.controller('mainController', function(projects) {
+    console.log(1044);
+    console.log(projects);
 });
