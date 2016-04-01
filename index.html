@@ -1,15 +1,16 @@
-<html>
+<!doctype html>
+<html ng-app="FokoDecode">
+
 <head>
-	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-	<link rel="stylesheet" href="custom.css">
-	<link rel="shortcut icon" href="icon.jpeg">
-	<title>Foko</title>
+    <meta charset="utf-8">
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-route/angular-route.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers/mainController.js"></script>
 </head>
 
 <body>
-	<div class="container">
-		
-	</div>
+    <div ng-view></div>
 </body>
+
 </html>
