@@ -1,5 +1,5 @@
 app.factory("projectFactory", ["$http", "$q", function($http, $q) {
-    var urlBase = '/api/projects';
+    var urlBase = 'localhost:3000/api/projects';
     var projectFactory = {};
 
     projectFactory.getProjects = function() {

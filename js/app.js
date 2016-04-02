@@ -16,13 +16,11 @@ app.config(function($routeProvider, $locationProvider) {
     $routeProvider
         .when('/', {
             controller: 'loginController',
-            templateUrl: 'templates/login.html',
-            resolve: resolveProjects
+            templateUrl: 'templates/login.html'
         })
         .when('/project/:id', {
             controller: 'projectController',
-            templateUrl: 'templates/project.html',
-            resolve: resolveProject
+            templateUrl: 'templates/project.html'
         })
         .when('/projects', {
             controller: 'projectsController',
@@ -31,8 +29,11 @@ app.config(function($routeProvider, $locationProvider) {
         })
         .when('/dash', {
             controller: 'dashController',
-            templateUrl: 'templates/dashboard.html',
-            resolve: resolveProjects
+            templateUrl: 'templates/dashboard.html'
+        })
+        .when('/createProject', {
+            controller: 'createProjectController',
+            templateUrl: 'templates/createProject.html'
         })
         .otherwise({
             redirectTo: '/'
