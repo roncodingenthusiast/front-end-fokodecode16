@@ -16,14 +16,13 @@ app.factory("versionFactory", ["$http", "$q", function($http, $q) {
 
     versionFactory.getVersion = function(id) {
         var deferred = $q.defer();
-        $http.get(urlBase + '/' + id);
-
-        .then(function(result) {
-                deferred.resolve(result.data);
-            },
-            function() {
-                deferred.reject();
-            });
+        $http.get(urlBase + '/' + id)
+            .then(function(result) {
+                    deferred.resolve(result.data);
+                },
+                function() {
+                    deferred.reject();
+                });
         return deferred.promise;
     };
 
