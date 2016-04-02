@@ -29,6 +29,11 @@ app.config(function($routeProvider, $locationProvider) {
             templateUrl: 'templates/projects.html',
             resolve: resolveProjects
         })
+        .when('/dash', {
+            controller: 'dashController',
+            templateUrl: 'templates/dashboard.html',
+            resolve: resolveProjects
+        })
         .otherwise({
             redirectTo: '/'
         });
