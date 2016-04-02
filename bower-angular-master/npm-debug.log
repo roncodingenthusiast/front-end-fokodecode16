@@ -1,0 +1,91 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/nodejs', '/usr/bin/npm', 'install', 'angular' ]
+2 info using npm@3.8.3
+3 info using node@v5.10.0
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readLocalPackageData
+7 silly fetchPackageMetaData angular
+8 silly fetchNamedPackageData angular
+9 silly mapToRegistry name angular
+10 silly mapToRegistry using default registry
+11 silly mapToRegistry registry https://registry.npmjs.org/
+12 silly mapToRegistry data Result {
+12 silly mapToRegistry   raw: 'angular',
+12 silly mapToRegistry   scope: null,
+12 silly mapToRegistry   name: 'angular',
+12 silly mapToRegistry   rawSpec: '',
+12 silly mapToRegistry   spec: 'latest',
+12 silly mapToRegistry   type: 'tag' }
+13 silly mapToRegistry uri https://registry.npmjs.org/angular
+14 verbose request uri https://registry.npmjs.org/angular
+15 verbose request no auth needed
+16 info attempt registry request try #1 at 1:19:49 PM
+17 verbose request id 31d2f48388d9bad2
+18 verbose etag "A22EJ5I6UMW7CVW364N3RJATZ"
+19 http request GET https://registry.npmjs.org/angular
+20 http 304 https://registry.npmjs.org/angular
+21 verbose headers { date: 'Fri, 01 Apr 2016 20:19:49 GMT',
+21 verbose headers   via: '1.1 varnish',
+21 verbose headers   'cache-control': 'max-age=300',
+21 verbose headers   etag: '"A22EJ5I6UMW7CVW364N3RJATZ"',
+21 verbose headers   age: '193',
+21 verbose headers   connection: 'keep-alive',
+21 verbose headers   'x-served-by': 'cache-jfk1046-JFK',
+21 verbose headers   'x-cache': 'HIT',
+21 verbose headers   'x-cache-hits': '1',
+21 verbose headers   'x-timer': 'S1459541989.968135,VS0,VE0',
+21 verbose headers   vary: 'Accept' }
+22 silly get cb [ 304,
+22 silly get   { date: 'Fri, 01 Apr 2016 20:19:49 GMT',
+22 silly get     via: '1.1 varnish',
+22 silly get     'cache-control': 'max-age=300',
+22 silly get     etag: '"A22EJ5I6UMW7CVW364N3RJATZ"',
+22 silly get     age: '193',
+22 silly get     connection: 'keep-alive',
+22 silly get     'x-served-by': 'cache-jfk1046-JFK',
+22 silly get     'x-cache': 'HIT',
+22 silly get     'x-cache-hits': '1',
+22 silly get     'x-timer': 'S1459541989.968135,VS0,VE0',
+22 silly get     vary: 'Accept' } ]
+23 verbose etag https://registry.npmjs.org/angular from cache
+24 verbose get saving angular to /home/ishaaq/.npm/registry.npmjs.org/angular/.cache.json
+25 verbose correctMkdir /home/ishaaq/.npm correctMkdir not in flight; initializing
+26 silly install normalizeTree
+27 silly loadCurrentTree Finishing
+28 silly loadIdealTree Starting
+29 silly install loadIdealTree
+30 silly cloneCurrentTree Starting
+31 silly install cloneCurrentTreeToIdealTree
+32 silly cloneCurrentTree Finishing
+33 silly loadShrinkwrap Starting
+34 silly install loadShrinkwrap
+35 silly loadShrinkwrap Finishing
+36 silly loadAllDepsIntoIdealTree Starting
+37 silly install loadAllDepsIntoIdealTree
+38 silly rollbackFailedOptional Starting
+39 silly rollbackFailedOptional Finishing
+40 silly runTopLevelLifecycles Starting
+41 silly runTopLevelLifecycles Finishing
+42 silly install printInstalled
+43 verbose stack Error: Refusing to install angular as a dependency of itself
+43 verbose stack     at checkSelf (/usr/lib/node_modules/npm/lib/install/validate-args.js:53:14)
+43 verbose stack     at Array.<anonymous> (/usr/lib/node_modules/npm/node_modules/slide/lib/bind-actor.js:15:8)
+43 verbose stack     at LOOP (/usr/lib/node_modules/npm/node_modules/slide/lib/chain.js:15:14)
+43 verbose stack     at chain (/usr/lib/node_modules/npm/node_modules/slide/lib/chain.js:20:5)
+43 verbose stack     at /usr/lib/node_modules/npm/lib/install/validate-args.js:16:5
+43 verbose stack     at /usr/lib/node_modules/npm/node_modules/slide/lib/async-map.js:52:35
+43 verbose stack     at Array.forEach (native)
+43 verbose stack     at /usr/lib/node_modules/npm/node_modules/slide/lib/async-map.js:52:11
+43 verbose stack     at Array.forEach (native)
+43 verbose stack     at asyncMap (/usr/lib/node_modules/npm/node_modules/slide/lib/async-map.js:51:8)
+44 verbose cwd /home/ishaaq/Documents/fokohackathon/front-end-fokodecode16/bower-angular-master
+45 error Linux 4.2.0-27-generic
+46 error argv "/usr/bin/nodejs" "/usr/bin/npm" "install" "angular"
+47 error node v5.10.0
+48 error npm  v3.8.3
+49 error code ENOSELF
+50 error Refusing to install angular as a dependency of itself
+51 error If you need help, you may report this error at:
+51 error     <https://github.com/npm/npm/issues>
+52 verbose exit [ 1, true ]
