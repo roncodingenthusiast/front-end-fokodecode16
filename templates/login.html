@@ -34,18 +34,23 @@
 						<div class="form-group">
 						    <div class="col-sm-12">
 						    	<div class="jumbotron col-sm-12">
-						      		<input type="text" class="form-control" placeholder="Add comment">
-						      		<button type="submit" class="btn btn-default"> Send </button>
+						    		<div class="chat-screen" style="font-size: 20px"></div>
+						      		<input class="text-bar" style="font-size: 20px" placeholder="Add comment"></input>
+						      		<input type="button" id="theButton" class="send-btn" value="Send" />
 						    	</div>
 							</div>
 						</div>
 					</form>
-				</div>	
+				</div>
         	</div>	
  		</div>
 </div>
 
 <script type="text/javascript">
+	$(document).load(function(){
+		if (true) {}
+	})
+
 	$(".nav.nav-pills li").on("click",function(){
 	  $(".nav.nav-pills li").removeClass("active");
 	  $(this).addClass("active");
@@ -55,4 +60,9 @@
 	  $(".pagination li").removeClass("active");
 	  $(this).addClass("active");
 	});
+
+	$('.send-btn').click(function () {
+    $(".chat-screen").append($(".text-bar").val());
+    $(".chat-screen").append("<br>");
+});
 </script>

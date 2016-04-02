@@ -1,0 +1,32 @@
+.main-window {
+    width: 300px;
+    height: auto;
+    border: 1px solid black;
+    background-color: blue;
+}
+.chat-screen {
+    width: auto;
+    height: 300px;
+    border: 1px solid black;
+    margin: 10px;
+    background-color: white;
+}
+.text-bar {
+    width: 200px;
+    height: 30px;
+    margin: 0 10px 10px 10px;
+    border: 1px solid black;
+    float:left;
+    background-color: white;
+}
+.send-btn {
+    width: 65px;
+    height: 30px;
+    margin: 0 10px 10px 0;
+    float:left;
+}
+.bottom-wrapper {
+    overflow: auto;
+    width: auto;
+    height:auto;
+}
