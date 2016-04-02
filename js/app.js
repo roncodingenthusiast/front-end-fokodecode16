@@ -1,4 +1,4 @@
-var app = angular.module('FokoDecode', ['ngRoute', 'ui.bootstrap']);
+var app = angular.module('FokoDecode', ['ngRoute']);
 
 app.config(function($routeProvider, $locationProvider) {
     var resolveProjects = {
