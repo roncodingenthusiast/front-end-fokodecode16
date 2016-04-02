@@ -8,22 +8,23 @@ app.config(function($routeProvider, $locationProvider) {
     };
 
     var resolveProject = {
-    	projects: function() {
-    		return 201;
-    	}
+        projects: function() {
+            return 201;
+        }
     };
 
     $routeProvider
-    	.when('/dsadsads', {
-    		controller: 'loginController',
-    		templateURL: 'templates/login.html'
-    	})
-    	.when ('/project/:id', {
-    		controller: 'projectController',
-    		templateUrl: 'templates/project.html',
-    		resolve: resolveProject
-    	})
         .when('/', {
+            controller: 'loginController',
+            templateUrl: 'templates/login.html',
+            resolve: resolveProjects
+        })
+        .when('/project/:id', {
+            controller: 'projectController',
+            templateUrl: 'templates/project.html',
+            resolve: resolveProject
+        })
+        .when('/projects', {
             controller: 'projectsController',
             templateUrl: 'templates/projects.html',
             resolve: resolveProjects
