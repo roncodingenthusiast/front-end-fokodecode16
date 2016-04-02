@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="FokoDecode">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,13 +18,21 @@
     <script src="js/controllers/loginController.js"></script>
     <script src="js/controllers/projectController.js"></script>
     <script src="js/controllers/projectsController.js"></script>
-    <script src="js/controllers/dashboardController.js"></script>
-	<title>Foko</title>
-	<style type="text/css">
-		body { padding-top: 60px; }
-	</style>
+    <script src="js/controllers/createProjectController.js"></script>
+    <script src="js/factories/annotationFactory.js"></script>
+    <script src="js/factories/commentFactory.js"></script>
+    <script src="js/factories/projectFactory.js"></script>
+    <script src="js/factories/versionFactory.js"></script>
+    <title>Foko</title>
+    <style type="text/css">
+    body {
+        padding-top: 60px;
+    }
+    </style>
 </head>
+
 <body>
-     <div ng-view class="container-fluid"></div>
+    <div ng-view class="container-fluid"></div>
 </body>
+
 </html>
