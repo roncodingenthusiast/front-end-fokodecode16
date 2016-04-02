@@ -1,8 +1,8 @@
-app.factory("projectFactory", ["$http", "$q", function($http, $q) {
-    var urlBase = '/api/projects';
-    var projectFactory = {};
+app.factory("versionFactory", ["$http", "$q", function($http, $q) {
+    var urlBase = '/api/versions';
+    var versionFactory = {};
 
-    projectFactory.getProjects = function() {
+    versionFactory.getVersions = function() {
         var deferred = $q.defer();
         $http.get(urlBase)
             .then(function(result) {
@@ -14,7 +14,7 @@ app.factory("projectFactory", ["$http", "$q", function($http, $q) {
         return deferred.promise;
     };
 
-    projectFactory.getProject = function(id) {
+    versionFactory.getVersion = function(id) {
         var deferred = $q.defer();
         $http.get(urlBase + '/' + id);
 
@@ -27,7 +27,7 @@ app.factory("projectFactory", ["$http", "$q", function($http, $q) {
         return deferred.promise;
     };
 
-    projectFactory.insertProject = function(project) {
+    versionFactory.insertVersion = function(project) {
         var deferred = $q.defer();
         $http.post(project, cust)
             .then(function(result) {
@@ -39,7 +39,7 @@ app.factory("projectFactory", ["$http", "$q", function($http, $q) {
         return deferred.promise;
     };
 
-    projectFactory.updateProject = function(project) {
+    versionFactory.updateVersion = function(project) {
         var deferred = $q.defer();
         $http.put(urlBase + '/' + cust.ID, cust)
             .then(function(result) {
@@ -51,5 +51,5 @@ app.factory("projectFactory", ["$http", "$q", function($http, $q) {
         return deferred.promise;
     };
 
-    return projectFactory;
+    return versionFactory;
 }]);
