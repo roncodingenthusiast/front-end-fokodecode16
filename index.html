@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="FokoDecode">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,12 +13,13 @@
     <script src="js/controllers/loginController.js"></script>
     <script src="js/controllers/projectController.js"></script>
     <script src="js/controllers/projectsController.js"></script>
+    <script src="js/controllers/dashboardController.js"></script>
 	<title>Foko</title>
 	<style type="text/css">
 		body { padding-top: 60px; }
 	</style>
 </head>
-<body ng-app="FokoDecode">
-     <div ng-view></div>
+<body>
+     <div ng-view class="container-fluid"></div>
 </body>
 </html>
