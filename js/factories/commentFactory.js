@@ -1,5 +1,5 @@
 app.factory("commentFactory", ["$http", "$q", function($http, $q) {
-    var urlBase = '/api/comments';
+    var urlBase = 'http://localhost:3000/api/comments';
     var commentFactory = {};
 
     commentFactory.getComments = function() {

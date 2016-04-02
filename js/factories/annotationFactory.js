@@ -1,5 +1,5 @@
 app.factory("annotationFactory", ["$http", "$q", function($http, $q) {
-    var urlBase = '/api/annotations';
+    var urlBase = 'http://localhost:3000/api/annotations';
     var annotationFactory = {};
 
     annotationFactory.getAnnotations = function() {

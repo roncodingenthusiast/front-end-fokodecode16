@@ -1,5 +1,5 @@
 app.factory("versionFactory", ["$http", "$q", function($http, $q) {
-    var urlBase = '/api/versions';
+    var urlBase = 'http://localhost:3000/api/versions';
     var versionFactory = {};
 
     versionFactory.getVersions = function() {
