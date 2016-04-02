@@ -4,13 +4,29 @@ app.config(function($routeProvider, $locationProvider) {
     var resolveProjects = {
         projects: function() {
             return 202;
-        }	
+        }
+    };
+
+    var resolveProject = {
+        projects: function() {
+            return 201;
+        }
     };
 
     $routeProvider
         .when('/', {
-            controller: 'mainController',
-            templateUrl: 'templates/main.html',
+            controller: 'loginController',
+            templateUrl: 'templates/login.html',
+            resolve: resolveProjects
+        })
+        .when('/project/:id', {
+            controller: 'projectController',
+            templateUrl: 'templates/project.html',
+            resolve: resolveProject
+        })
+        .when('/projects', {
+            controller: 'projectsController',
+            templateUrl: 'templates/projects.html',
             resolve: resolveProjects
         })
         .otherwise({
