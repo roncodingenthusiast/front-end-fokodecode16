@@ -1,5 +1,5 @@
 app.factory("versionFactory", ["$http", "$q", function($http, $q) {
-    var urlBase = '/api/versions';
+    var urlBase = 'http://localhost:3000/api/versions';
     var versionFactory = {};
 
     versionFactory.getVersions = function() {
@@ -16,14 +16,13 @@ app.factory("versionFactory", ["$http", "$q", function($http, $q) {
 
     versionFactory.getVersion = function(id) {
         var deferred = $q.defer();
-        $http.get(urlBase + '/' + id);
-
-        .then(function(result) {
-                deferred.resolve(result.data);
-            },
-            function() {
-                deferred.reject();
-            });
+        $http.get(urlBase + '/' + id)
+            .then(function(result) {
+                    deferred.resolve(result.data);
+                },
+                function() {
+                    deferred.reject();
+                });
         return deferred.promise;
     };
 

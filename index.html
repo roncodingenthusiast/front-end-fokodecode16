@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="FokoDecode">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
-        <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-        <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
+    <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 	<link rel="shortcut icon" href="icon.jpeg">
 	<script src="bower_components/angular/angular.min.js"></script>
     <script src="bower_components/angular-route/angular-route.min.js"></script>
@@ -17,13 +16,21 @@
     <script src="js/controllers/loginController.js"></script>
     <script src="js/controllers/projectController.js"></script>
     <script src="js/controllers/projectsController.js"></script>
-    <script src="js/controllers/dashboardController.js"></script>
-	<title>Foko</title>
-	<style type="text/css">
-		body { padding-top: 60px; }
-	</style>
+    <script src="js/controllers/createProjectController.js"></script>
+    <script src="js/factories/annotationFactory.js"></script>
+    <script src="js/factories/commentFactory.js"></script>
+    <script src="js/factories/projectFactory.js"></script>
+    <script src="js/factories/versionFactory.js"></script>
+    <title>Foko</title>
+    <style type="text/css">
+    body {
+        padding-top: 60px;
+    }
+    </style>
 </head>
+
 <body>
-     <div ng-view class="container-fluid"></div>
+    <div ng-view class="container-fluid"></div>
 </body>
+
 </html>

@@ -1,5 +1,5 @@
 app.factory("projectFactory", ["$http", "$q", function($http, $q) {
-    var urlBase = 'localhost:3000/api/projects';
+    var urlBase = 'http://localhost:3000/api/project';
     var projectFactory = {};
 
     projectFactory.getProjects = function() {
@@ -16,9 +16,8 @@ app.factory("projectFactory", ["$http", "$q", function($http, $q) {
 
     projectFactory.getProject = function(id) {
         var deferred = $q.defer();
-        $http.get(urlBase + '/' + id);
-
-        .then(function(result) {
+        $http.get(urlBase + '/' + id)
+        then(function(result) {
                 deferred.resolve(result.data);
             },
             function() {

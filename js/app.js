@@ -2,8 +2,8 @@ var app = angular.module('FokoDecode', ['ngRoute']);
 
 app.config(function($routeProvider, $locationProvider) {
     var resolveProjects = {
-        projects: function() {
-            return 202;
+        projects: function(projectFactory) {
+            return projectFactory.getProjects();
         }
     };
 
@@ -27,21 +27,20 @@ app.config(function($routeProvider, $locationProvider) {
             templateUrl: 'templates/projects.html',
             resolve: resolveProjects
         })
-        .when('/dash', {
-            controller: 'dashController',
-            templateUrl: 'templates/dashboard.html'
-        })
         .when('/createProject', {
             controller: 'createProjectController',
             templateUrl: 'templates/createProject.html'
+        }).when('/main', {
+            controller: 'loginController',
+            templateUrl: 'templates/main.html'
         })
-        .otherwise({
+        /*.otherwise({
             redirectTo: '/'
-        });
+        });*/
 
     // use the HTML5 History API
     $locationProvider.html5Mode({
         enabled: true,
         requireBase: false
     });
-})
+});

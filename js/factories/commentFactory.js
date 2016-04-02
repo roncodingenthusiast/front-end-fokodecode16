@@ -1,5 +1,5 @@
 app.factory("commentFactory", ["$http", "$q", function($http, $q) {
-    var urlBase = '/api/comments';
+    var urlBase = 'http://localhost:3000/api/comments';
     var commentFactory = {};
 
     commentFactory.getComments = function() {
@@ -16,14 +16,13 @@ app.factory("commentFactory", ["$http", "$q", function($http, $q) {
 
     commentFactory.getComment = function(id) {
         var deferred = $q.defer();
-        $http.get(urlBase + '/' + id);
-
-        .then(function(result) {
-                deferred.resolve(result.data);
-            },
-            function() {
-                deferred.reject();
-            });
+        $http.get(urlBase + '/' + id)
+            .then(function(result) {
+                    deferred.resolve(result.data);
+                },
+                function() {
+                    deferred.reject();
+                });
         return deferred.promise;
     };
 
