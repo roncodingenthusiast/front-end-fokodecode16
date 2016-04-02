@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	<link rel="shortcut icon" href="icon.jpeg">
+	<script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-route/angular-route.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers/mainController.js"></script>
+	<title>Foko</title>
+	<style type="text/css">
+		body { padding-top: 60px; }
+	</style>
+</head>
+<body>
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+        	<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <div style="font-size-adjust: 10px">
+          <a class="navbar-brand" href="index.html"><strong> Store 1 </strong></a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="container-fluid col-sm-offset-4 col-sm-3 row-sm-offset-5">
+    	<input type="input" class="form-control" placeholder="Name"> </input>
+    	<button type="submit" class="btn btn-default"> Submit </button>
+    </div>
+     <div ng-view></div>
+</body>
+</html>
