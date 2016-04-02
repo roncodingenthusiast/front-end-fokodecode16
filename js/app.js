@@ -30,6 +30,9 @@ app.config(function($routeProvider, $locationProvider) {
         .when('/createProject', {
             controller: 'createProjectController',
             templateUrl: 'templates/createProject.html'
+        }).when('/main', {
+            controller: 'loginController',
+            templateUrl: 'templates/main.html'
         })
         /*.otherwise({
             redirectTo: '/'
