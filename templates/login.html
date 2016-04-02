@@ -26,7 +26,7 @@
 				  <h2> Title of wanted revision </h2>
 				  <p> Description <br> Description <br> Description <br> Description <br> Description </p>
 				</div>
-				<div style="height: 500px" class=" jumbotron col-sm-12 text-center" onload="init()">
+				<div style="height: 500px" class=" jumbotron col-sm-12 text-center" >
 					<!--fix me later bro-->
 					
 			        <div style="background:yellow;" id="yellow" onclick="color(this)"></div>
@@ -65,6 +65,7 @@
         
 <script   src="https://code.jquery.com/jquery-2.2.2.min.js"   integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI="   crossorigin="anonymous"></script>
     <script type="text/javascript">
+    
     var canvas, ctx, flag = false,
         prevX = 0,
         currX = 0,
@@ -143,8 +144,8 @@
     }
     
     function save() {
-        // var dataURL = canvas.toDataURL();
-        // example new project
+        var dataURL = canvas.toDataURL();
+        //example new project
         // $.ajax({
         //     type: "POST",
         //     url: "http://localhost:3000/api/project",
@@ -155,25 +156,29 @@
         //     },
         //     dataType: "JSON"
         // });
-        // example new annotation
-        // $.ajax({
-        //     type: "POST",
-        //     url: "http://localhost:3000/api/annotation",
-        //     data: {
-        //         "projectID" : "57000fdefe059f0c16df3120",
-        //         "uName" : "uName",
-        //         "imgString" : dataURL.substring(22,dataURL.length)
-        //     },
-        //     dataType: "JSON"
-        // });
+        //example new annotation
+        $.ajax({
+            type: "POST",
+            url: "http://localhost:3000/api/annotation",
+            data: {
+                "projectID" : "57000fdefe059f0c16df3120",
+                "uName" : "uName",
+                "imgString" : dataURL.substring(22,dataURL.length)
+            },
+            dataType: "JSON"
+        });
     }
     
     function findxy(res, e) {
+        var bodyRect = document.body.getBoundingClientRect(),
+        elem = document.getElementById("can").getBoundingClientRect(),
+        offsetY   = elem.top - bodyRect.top;
+        offsetX   = elem.left - bodyRect.left;
         if (res == 'down') {
             prevX = currX;
             prevY = currY;
-            currX = e.clientX - canvas.offsetLeft;
-            currY = e.clientY - canvas.offsetTop;
+            currX = e.clientX - offsetX; //- canvas.offsetLeft;
+            currY = e.clientY - offsetY + document.body.scrollTop; //- canvas.offsetTop;
     
             flag = true;
             dot_flag = true;
@@ -192,8 +197,8 @@
             if (flag) {
                 prevX = currX;
                 prevY = currY;
-                currX = e.clientX - canvas.offsetLeft;
-                currY = e.clientY - canvas.offsetTop;
+                currX = e.clientX - offsetX;
+                currY = e.clientY - offsetY + document.body.scrollTop;
                 draw();
             }
         }
@@ -205,7 +210,7 @@
 		};
         //get image to draw
         var projectID = "57000fdefe059f0c16df3120";
-        var annIndex = 0;
+        var annIndex = 2;
         $.ajax({
             type: "GET",
             url: "http://localhost:3000/api/annotation?projectID=" + projectID + "&annIndex=" + annIndex,
@@ -214,6 +219,9 @@
             image.src = "data:image/  png;base64," + base64;
         });
     }
+
+    init();
+
     </script>
 <script type="text/javascript">
 	$(".nav.nav-pills li").on("click",function(){
